@@ -1,0 +1,18 @@
+{
+  "task": "robot_trajectory_prediction",
+  "texts": [
+    "opening bottle"
+  ],
+  "videos": [
+    {
+      "video_path": "videos/872.webm"
+    }
+  ],
+  "episode_id": "872",
+  "video_length": 39,
+  "latent_videos": [
+    {
+      "latent_video_path": "latent_videos_svd/val/872/0.pt"
+    }
+  ]
+}

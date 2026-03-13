@@ -1,0 +1,18 @@
+{
+  "task": "robot_trajectory_prediction",
+  "texts": [
+    "spinning spinner so it continues spinning"
+  ],
+  "videos": [
+    {
+      "video_path": "videos/2446.webm"
+    }
+  ],
+  "episode_id": "2446",
+  "video_length": 49,
+  "latent_videos": [
+    {
+      "latent_video_path": "latent_videos_svd/val/2446/0.pt"
+    }
+  ]
+}

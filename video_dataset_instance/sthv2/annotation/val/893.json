@@ -1,0 +1,18 @@
+{
+  "task": "robot_trajectory_prediction",
+  "texts": [
+    "putting cotton balls into container"
+  ],
+  "videos": [
+    {
+      "video_path": "videos/893.webm"
+    }
+  ],
+  "episode_id": "893",
+  "video_length": 55,
+  "latent_videos": [
+    {
+      "latent_video_path": "latent_videos_svd/val/893/0.pt"
+    }
+  ]
+}

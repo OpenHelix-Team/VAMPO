@@ -1,0 +1,18 @@
+{
+  "task": "robot_trajectory_prediction",
+  "texts": [
+    "pushing box from left to right"
+  ],
+  "videos": [
+    {
+      "video_path": "videos/1113.webm"
+    }
+  ],
+  "episode_id": "1113",
+  "video_length": 55,
+  "latent_videos": [
+    {
+      "latent_video_path": "latent_videos_svd/val/1113/0.pt"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task": "robot_trajectory_prediction",
+  "texts": [
+    "uncovering tweezers"
+  ],
+  "videos": [
+    {
+      "video_path": "videos/1870.webm"
+    }
+  ],
+  "episode_id": "1870",
+  "video_length": 54,
+  "latent_videos": [
+    {
+      "latent_video_path": "latent_videos_svd/val/1870/0.pt"
+    }
+  ]
+}

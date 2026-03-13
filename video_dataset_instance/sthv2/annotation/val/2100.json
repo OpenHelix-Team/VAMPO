@@ -1,0 +1,18 @@
+{
+  "task": "robot_trajectory_prediction",
+  "texts": [
+    "pretending to pour water out of bottle, but bottle is empty"
+  ],
+  "videos": [
+    {
+      "video_path": "videos/2100.webm"
+    }
+  ],
+  "episode_id": "2100",
+  "video_length": 69,
+  "latent_videos": [
+    {
+      "latent_video_path": "latent_videos_svd/val/2100/0.pt"
+    }
+  ]
+}

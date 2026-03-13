@@ -1,0 +1,150 @@
+dataset_args:
+  ################# dataset args #################
+  data_json_path: /localssd/gyj/opensource_robotdata/annotation_all/0422_xhand_cutend_interval2 #/localssd/gyj/opensource_robotdata/annotation_all/0422_xhand_cutend_interval2 #'/localssd/gyj/opensource_robotdata/annotation_all/0407_interval2'
+  data_root_path: "/localssd/gyj/opensource_robotdata" # "/cephfs/cjyyj/data0924/opensource_robotdata" # "/localssd/gyj/opensource_robotdata" #/storage/opensource_robotdata #  #"/cephfs/shared/gyj/robo_datasets/opensource_robotdata"
+  project_dir: 'XhandNew'
+  results_dir: "results"
+  ################## action args ################## 
+  sequence_interval: 2 #1 #!!!
+  num_frames: ${act_seq_len}
+  xyz_scale: 10.0
+  rot_scale: 1.0
+  hand_scale: 1.0
+  gripper_scale: 1.0
+  learn_command: True
+  rel_rot_scale: 3.0
+  rel_xyz_scale: 10.0
+  rel_hand_scale: 0.25
+  relative: True
+  norm_input: False
+  # xhand mu and std
+  mu: [ 0.41807934, -0.02456053,  0.24751276,  0.97359505 , 0.0018398,  -0.04410067, -0.07092058,  1.09259058,  0.67465593,  0.23965064, -0.01790992,  0.617086, 0.64119945,  0.52015448,  0.67671067,  0.54943819,  0.76087041,  0.54754337, 0.98794834]
+  std: [0.1, 0.1, 0.1, 0.5, 0.5, 0.5, 0.5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,]
+
+  action_v2: True
+  "state_01": [0.2327873057126999, -0.2847508722543716, 0.09020242795348167, -0.999499409198761, -0.3175472915172577, -0.32123780488967896, -0.01171431802213192, 0.041126053780317307, -0.00965766329318285, -0.22093652188777924, -0.14832934737205505, 0.0099693164229393, 0.0, 0.0, 0.0, 0.010104239918291569, 0.0, 0.010157700628042221, 0.0]
+  "state_99": [0.6178793156147002, 0.18066011071205135, 0.4020519441366195, 0.9993844032287598, 0.34523667156696314, 0.2597389990091321, 0.6856552743911744, 1.5707499980926514, 1.0868695974349976, 1.212472677230835, 0.1381184607744217, 1.6990563869476318, 1.8868407011032104, 1.7383604049682617, 1.9182446002960205, 1.7321555614471436, 1.9073796272277832, 1.7529289722442627, 1.9198055267333984]
+  "action_01": [-0.07004882752895356, -0.09645294748246669, -0.08643514215946198, -0.3035825976377443, -0.22039858180952437, -0.2078631729483591, 0.0, 0.0, 0.0, -0.27000001072883606, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  "action_99": [0.08109609544277205, 0.09823462707921883, 0.0967145562171936, 0.368393464038981, 0.24086734394013795, 0.21192558866612043, 1.7698291540145874, 1.223341941833496, 1.4909610748291016, 0.17599999904632568, 1.744444489479065, 1.9210000038146973, 1.744444489479065, 1.940999984741211, 1.744444489479065, 1.9210000038146973, 1.8316667079925537, 1.9210000038146973]
+
+  use_depth: False
+  pre_encode: True
+  ################## dataloader args ############
+  batch_size: ${batch_size} #
+  test_batch_size: ${batch_size} #
+  shuffle: True
+  num_workers: 6
+
+root_data_dir: /storage/data/task_ABC_D
+lang_folder: lang_clip_resnet50
+clip_lang_model_name: ViT-B/32
+
+log_dir: ./logs/text_xhand
+uuid: test_xhand
+slurm: false
+min_window_size: 21 # 21
+max_window_size: 50
+future_range: 29
+seed: 242
+device: ''
+batch_size: 28 # 38 # 128
+devices: 4
+goal_window_size: 1
+multistep: ${act_seq_len}
+p_last_state: 0
+max_epochs: 500
+log_every: 50
+rollout_lh_skip_epochs: 290
+window_sampling_strategy: 'geometric'
+num_workers: 12
+img_gen_frame_diff: 3
+benchmark_name: xhand_2025_v2 # calvin_abcd
+use_ckpt_path : false
+ckpt_path: /cephfs/cjyyj/code/video_robot_svd/logs/text_xhand/runs/2025-04-23/14-12-42/icml2025/checkpoints/0019552_0.051199.pt #/cephfs/cjyyj/code/video_robot_svd/logs/text_xhand/runs/2025-04-09/01-17-25/icml2025/checkpoints/0115782_0.011571.pt
+act_seq_len: 8
+obs_seq_len: 1
+
+model:
+  _target_: models.VPP_policy.VPP_Policy
+  _recursive_: false
+  latent_dim: 384
+  multistep: 10
+  sampler_type: 'ddim'
+  num_sampling_steps: 10
+  sigma_data: 0.5
+  sigma_min: 0.001
+  sigma_max: 80
+  noise_scheduler: 'exponential'
+  sigma_sample_density_type: 'loglogistic'
+  use_lr_scheduler: true
+  act_window_size: ${act_seq_len}
+  obs_seq_len: ${obs_seq_len}
+  action_dim: 18
+  proprio_dim: 19
+  action_seq_len: ${act_seq_len}
+  use_text_not_embedding: True
+  seed: ${seed}
+  Former_depth: 6
+  Former_heads: 8
+  Former_dim_head: 64
+  Former_num_time_embeds: 16
+  num_latents: 224
+  text_encoder_path: '/cephfs/shared/llm/clip-vit-base-patch32'
+  pretrained_model_path: /cephfs/cjyyj/code/video_robot_svd/output/svd/train_2025-04-22T00-22-16/checkpoint-60000 
+  # pretrained_model_path: /cephfs/cjyyj/code/video_robot_svd/output/svd/train_2025-04-04T10-17-22/checkpoint-180000
+  use_3d_Former: True
+  timestep: 20
+  extract_layer_idx: 1
+  device: 
+  #pretrained_model_path: /home/disk2/gyj/hyc_ckpt/svd_pre/checkpoint-100000
+  optimizer:
+    _target_: torch.optim.AdamW
+    transformer_weight_decay: 0.05
+    obs_encoder_weight_decay: 0.05
+    learning_rate: 1e-4
+    betas: [ 0.9, 0.9 ]
+  lr_scheduler:
+    lr_scheduler:
+      init_lr: 1e-4  # This is the peak or maximum learning rate
+      init_lr_scale: 0.1  # This is the ratio of initial learning rate to peak learning rate
+      final_lr_scale: 1e-6  # This is the ratio of final learning rate to peak learning rate
+      total_steps: 50000  # Example total steps, adjust as needed
+      phase_ratio: "(0.02, 0.08, 0.9)"
+      lr: 1e-4
+
+trainer:
+  gpus: ${devices}
+  precision: 16
+  max_epochs: ${max_epochs}
+  sync_batchnorm: false
+  accelerator: auto
+  limit_train_batches: 3000
+  limit_val_batches: 4
+
+logger:
+  _target_: pytorch_lightning.loggers.WandbLogger
+  save_dir: .
+  name: logger
+  group: models
+  log_model: false
+  project: ${benchmark_name} # calvin_vision
+  #entity: bennoq
+  id: ???
+
+
+hydra:
+  run:
+    dir: ${log_dir}/runs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${log_dir}/runs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.override_dirname}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - log_dir
+          - datamodule.root_data_dir
+          - trainer.gpus
+          - datamodule.num_workers
+          - trainer.limit_train_batches
+          - trainer.limit_val_batches

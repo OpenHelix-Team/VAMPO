@@ -1,0 +1,18 @@
+{
+  "task": "robot_trajectory_prediction",
+  "texts": [
+    "stuffing paper into a mug"
+  ],
+  "videos": [
+    {
+      "video_path": "videos/2645.webm"
+    }
+  ],
+  "episode_id": "2645",
+  "video_length": 53,
+  "latent_videos": [
+    {
+      "latent_video_path": "latent_videos_svd/val/2645/0.pt"
+    }
+  ]
+}
