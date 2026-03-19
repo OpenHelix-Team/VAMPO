@@ -79,50 +79,6 @@ python make_prediction.py --eval --config video_conf/val_svd.yaml --video_model_
 You can try more video predictions with samples in video_dataset_instance.
 `val_dataset_dir` is the root to datasets and `val_idx` is the sample index. The generated video is save in the folder`video_output`. 
 
-
-## Training Video Prediction Policy on Calvin
-
-### 🛸 Training requirements
-Our experiments are run on one node with 8 A800/H100 cards.
-
-### 🛸 Stage 1: Training video model
-(1) Since the video diffusion model are run in latent space of image encoder, we need to first extract the latent sapce of the video. This process will save GPU memory cost and reduce training time. Run `step1_prepare_latent_data.py` to prepare latent. The dataset format should be similar to `video_dataset_instance`. 
-
-We have extract features for something-something-v2, bridge, rt1 and calvin, and you can directly download them from [huggingface dataset:vpp_svd_latent](https://huggingface.co/datasets/yjguo/vpp_svd_latent/tree/main)
-
-(2) After prepare the latent, you need to reset the following parameters in `video_conf/train_svd.yaml`: `dataset_dir` is the root path of datasets; `dataset` is different video dataset used for finetuning and connected with `+`; `prob` is the sample ratio of each dataset. 
-
-```bash
-accelerate launch --main_process_port 29506 step1_train_svd.py --config video_conf/train_calvin_svd.yaml --pretrained_model_path ${path to svd-robot}
-```
-
-
-
-### 🛸 Stage 2: Training action model
-
-Important: We highly encourage you to **check the video prediction results** before policy learning, since the policy performance are highly depand on the video prediction quality. Some samples are automatically saved during training. You can also make more predcitions following the instructions in the video prediction section.
-
-Set the argument `video_model_path` to the video model you finetuned, the argument `root_data_dir` to where Calvin-ABC dataset located, the argument `text_encoder_path` to path to clip-vit-base-patch32 
-
-```bash
-accelerate launch step2_train_action_calvin.py --root_data_dir ${path to Calvin dataset} --video_model_path ${path to video model} --text_encoder_path ${path to clip}
-```
-
-## Trainning Video Prediction Policy on Custom environments
-The proccess is similar to train VPP on calvin benchamrks. Additionally, we provide the following files which we used to train VPP on real-world RobotEra x-bot/x-hand robot:
-
-`step2_prepare_json.py`: you can use it to merge the annotation and caculate the mean/std of state/action on your real robot demonstrations.
-
-`policy_models/datasets/xbot_dataset.py`: dataset
-
-`policy_models/VPP_policy_xbot.py`: action model
-
-`policy_conf/VPP_xbot_train.yaml`: training config
-
-`step2_train_action_xbot.py`: main_training_entrance
-
-`step3_deploy_real_xbot.py`: agent for deploy
-
 ## Acknowledgement
 
 Dyn-VPP is developed from [Video prediction policy](https://github.com/roboterax/video-prediction-policy). We thank the authors for their efforts!
