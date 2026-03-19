@@ -46,9 +46,8 @@ pip install -r requirements.txt
 | Ckpt name     | Training type | Size |
 |---------------|------------------|---------|
 | [clip-vit-base-patch32](https://huggingface.co/openai/clip-vit-base-patch32)  | CLIP text encoder, freezed during training        |  ~600M   |
-| [svd-robot](https://huggingface.co/yjguo/svd-robot/tree/main)  | SVD video model finetuned on sthv2，openx and xhand        | ~8G    |
-| [svd-robot-calvin](https://huggingface.co/yjguo/svd-robot-calvin-ft/tree/main) |   SVD video model finetuned on sthv2, openx and calvin abc video    | ~8G   |
-| [dp-calvin](https://huggingface.co/yjguo/dp-calvin/tree/main) |   Action model trained on annoted calvin abc dataset    |  ~1G  |
+| [dyn-vpp_svd](https://huggingface.co/williammmgezju/Dyn-VPP_SVD)  | SVD video model trained by our method        | ~8G    |
+| [dyn-vpp_policy](https://huggingface.co/williammmgezju/Dyn-VPP_policy) |   Action model trained on annoted calvin abc dataset    |  ~1G  |
 
 
 ## 📊 Reproducing the results in paper 
