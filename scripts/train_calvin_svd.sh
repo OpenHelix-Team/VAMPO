@@ -1,7 +1,6 @@
 #!/bin/bash
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 # export CUDA_VISIBLE_DEVICES=0
-# 执行训练命令
 LOG_DIR="./logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/train_$(date +'%Y%m%d_%H%M%S').log"

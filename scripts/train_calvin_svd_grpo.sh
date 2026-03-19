@@ -1,18 +1,15 @@
 #!/bin/bash
 cd "$(dirname "$0")/.."
-# export CUDA_VISIBLE_DEVICES=0
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export WANDB_MODE=offline
 
 LOG_DIR="./logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/train_$(date +'%Y%m%d_%H%M%S')_latent_lr1e-6.log"
-# LOG_FILE="$LOG_DIR/train_$(date +'%Y%m%d_%H%M%S')_debug.log"
   
-# 执行训练命令并保存日志 
 accelerate launch \
     --main_process_port 29506 \
-    step1_train_svd_grpo_flexiv.py \
+    step1_train_svd_grpo.py \
     --config video_conf/train_calvin_svd.yaml \
     pretrained_model_path=checkpoints/svd-robot-calvin-ft \
     sample_batch_size=8 \

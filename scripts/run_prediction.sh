@@ -1,7 +1,6 @@
 #!/bin/bash
 export CUDA_VISIBLE_DEVICES=0
 
-# SVD_MODEL_PATH="/robby/share/robbyvla/katuo/vpp/checkpoints/svd-robot-calvin-ft"  
 
 SVD_MODEL_PATH="output/svd/train_2025-11-28T16-02-22/checkpoint-160"  
 CLIP_MODEL_PATH="checkpoints/clip-vit-base-patch32"      
