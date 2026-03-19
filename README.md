@@ -25,7 +25,7 @@ As a result, Dyn-VPP yields more accurate visual dynamics and improves downstrea
 - [x] Inference and evaluation code on Calvin
 - [ ] Reinforcement learning post-training code
 
-## Installation 🛠️
+## 🛠️ Installation 
 ```bash
 conda create -n vpp python==3.11
 conda activate vpp
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ```
 
 
-## CheckPoints 📷
+## 📷 CheckPoints 
 
 
 | Ckpt name     | Training type | Size |
@@ -61,7 +61,7 @@ pip install -r requirements.txt
 
 
 
-## Reproducing the results in paper 📊
+## 📊 Reproducing the results in paper 
 ### 📊 Rollout on calvin abc benchmark
 First, you need to follow instructions in the [officail calvin repo](https://github.com/mees/calvin) to install the calvin environments and download official calvin ABC-D dataset(about 500 G).
 
@@ -70,17 +70,6 @@ Next, download the [svd-robot-calvin](https://huggingface.co/yjguo/svd-robot-cal
 ```bash
 python policy_evaluation/calvin_evaluate.py --video_model_path ${path to svd-robot-calvin} --action_model_folder ${path to dp-calvin} --clip_model_path ${path to clip} --calvin_abc_dir ${path to calvin dataset} 
 ```
-
-
-### 📊 Make video predictions on datasets
-You can also try video predictions with [svd-robot](https://huggingface.co/yjguo/svd-robot/tree/main) model finetuned on something-somthing-v2 datasets, Bridge,  RT-1 and RobotEra xhand. Some dataset examples are provided in the folder `video_dataset_instance` and you can direct run:
-
-```bash
-python make_prediction.py --eval --config video_conf/val_svd.yaml --video_model_path ${path to svd-robot} --clip_model_path ${path to clip} --val_dataset_dir video_dataset_instance/xhand --val_idx 0+50+100+150
-```
-
-You can try more video predictions with samples in video_dataset_instance.
-`val_dataset_dir` is the root to datasets and `val_idx` is the sample index. The generated video is save in the folder`video_output`. 
 
 ## Acknowledgement
 
