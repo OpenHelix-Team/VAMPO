@@ -51,14 +51,6 @@ pip install -r requirements.txt
 | [dp-calvin](https://huggingface.co/yjguo/dp-calvin/tree/main) |   Action model trained on annoted calvin abc dataset    |  ~1G  |
 
 
-**📊 Try Predictions on sthv2, bridge or rt-1:** If you want to make predictions on these datasets, download the svd-robot model.
-
-**📊 Replicate results on calvin abc:** If you want to replicate results on calvin abc, download the svd-robot-calvin model.
-
-**📊  Train VPP in cunstom environments**: If you want to run VPP algorithm on your own robot, download the svd-robot model and follow instructions in the training section.
-
-
-
 ## 📊 Reproducing the results in paper 
 ### 📊 Rollout on calvin abc benchmark
 First, you need to follow instructions in the [officail calvin repo](https://github.com/mees/calvin) to install the calvin environments and download official calvin ABC-D dataset(about 500 G).
