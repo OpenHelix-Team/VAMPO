@@ -2,49 +2,6 @@
 
 # Dyn-VPP: Video Prediction Policy with Dynamic Optimization  
 
-**Legend:** † Equal Contributions | ‡ Project Lead | * Corresponding Authors
-
----
-
-**Zirui Ge<sup>1,12†</sup>** &nbsp;|&nbsp;
-**Pengxiang Ding<sup>1,2,12†‡</sup>** &nbsp;|&nbsp;
-**Yemin Wang<sup>3,12†</sup>** &nbsp;|&nbsp;
-**Baohua Yin<sup>4,12</sup>** &nbsp;|&nbsp;
-**Qishen Wang<sup>5,12</sup>**  
-
-**Zhiyong Xie<sup>6</sup>** &nbsp;|&nbsp;
-**Jinbo Wang<sup>13</sup>** &nbsp;|&nbsp;
-**Hengtao Li<sup>7,12</sup>** &nbsp;|&nbsp;
-**Runze Suo<sup>10,12</sup>** &nbsp;|&nbsp;
-**Wenxuan Song<sup>9,12</sup>**  
-
-**Han Zhao<sup>1,2,12</sup>** &nbsp;|&nbsp;
-**Shangke Lyu<sup>9,12</sup>** &nbsp;|&nbsp;
-**Haoang Li<sup>8</sup>** &nbsp;|&nbsp;
-**Ran Cheng<sup>12‡</sup>** &nbsp;|&nbsp;
-**Cheng Chi<sup>11</sup>**  
-
-**Huibin Ge<sup>1</sup>** &nbsp;|&nbsp;
-**Yaozhi Luo<sup>1*</sup>** &nbsp;|&nbsp;
-**Donglin Wang<sup>2*</sup>**
-
----
-
-### Affiliations
-
-1. Zhejiang University  
-2. Westlake University  
-3. Xiamen University  
-4. University of Sussex  
-5. Tianjin University  
-6. Wuhan University  
-7. Hebei University of Technology  
-8. HKUST (GZ)  
-9. Nanjing University  
-10. Fudan University  
-11. Beijing Academy of Artificial Intelligence  
-12. OpenHelix Robotics  
-13. South China University of Technology
 <a href='https://arxiv.org/abs/xxxx'><img src='https://img.shields.io/badge/ArXiv-XXXX-red'></a> 
 <a href='https://dyn-vpp.github.io/Dyn-VPP'><img src='https://img.shields.io/badge/Project-Page-Blue'></a> 
 
