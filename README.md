@@ -21,6 +21,9 @@ As a result, Dyn-VPP yields more accurate visual dynamics and improves downstrea
     <img src="dyn_vpp_teaser.png" alt="method" width="100%" />
 </p>
 
+## 📌 Release Progress
+- [x] Inference and evaluation code on Calvin
+- [ ] Reinforcement learning post-training code
 
 ## Installation 🛠️
 ```bash
