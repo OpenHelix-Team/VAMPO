@@ -8,7 +8,7 @@
 </div>
 
 <p>
-    <img src="teaser.jpg" alt="method" width="100%" />
+    <img src="dyn_vpp_teaser.png" alt="method" width="100%" />
 </p>
 
 ---
