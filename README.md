@@ -1,43 +1,27 @@
 <div align="center">
-<h2><center>👉 Video Prediction Policy: 
 
-A Generalist Robot Policy with Predictive Visual Representations </h2>
+# 👉 Dyn-VPP: Video Prediction Policy with Dynamic Optimization  
 
-[Yucheng Hu*](https://github.com/Hu-Yuch), [Yanjiang Guo*](https://robert-gyj.github.io),  [Pengchao Wang](), [Xiaoyu Chen](https://cospui.github.io), [Yen-Jen Wang](https://wangyenjen.github.io), [Jianke Zhang](https://scholar.google.com/citations?hl=zh-CN&user=6is33pIAAAAJ), [Koushil Sreenath](https://me.berkeley.edu/people/koushil-sreenath/), [Chaochao Lu](https://causallu.com), [Jianyu Chen](http://people.iiis.tsinghua.edu.cn/~jychen/)
+### A Generalist Robot Policy with Predictive Visual Representations
 
- \*Equal contribution; Project co-lead 
-
- Tsinghua University, UC Berkeley, RobotEra, Shanghai AI Lab, Shanghai Qi Zhi Institute
-
-
-<a href='https://arxiv.org/abs/2412.14803'><img src='https://img.shields.io/badge/ArXiv-2412.14803-red'></a> 
-<a href='https://video-prediction-policy.github.io'><img src='https://img.shields.io/badge/Project-Page-Blue'></a> 
+<a href='https://arxiv.org/abs/xxxx'><img src='https://img.shields.io/badge/ArXiv-XXXX-red'></a> 
+<a href='https://your-project-page'><img src='https://img.shields.io/badge/Project-Page-Blue'></a> 
 
 </div>
 
-<!-- ![DiT samples](vpp_logo.png) -->
 <p>
-    <img src="vpp_method.jpg" alt="wild-data" width="100%" />
-    <!-- <img src="vpp_logo1.png" alt="wild-data" width="47%" />
-    <img src="vpp_logo2.png" alt="wild-eval" width="44.6%" /> -->
+    <img src="teaser.jpg" alt="method" width="100%" />
 </p>
 
-This repo is the official PyTorch implementation for ICML Spotlight paper [**Video Prediction Policy**](https://arxiv.org/abs/2412.14803).
+---
 
+## 🚀 Overview
 
-##  Project Overview 
+Video action models are a promising foundation for Vision–Language–Action (VLA) because they can learn rich visual dynamics directly from video. However, likelihood-oriented training of diffusion predictors emphasizes globally plausible futures and does not guarantee precision-critical visual dynamics needed for manipulation, so small prediction errors can be amplified by downstream policies.  
 
-**Stong performance:** 
+We propose **Dyn-VPP**, a post-training framework that casts multi-step denoising as policy optimization and aligns predicted future latents with expert visual dynamics via a verifiable terminal reward, without modifying any architecture. This enables explicit optimization of dynamics signals that are not captured by likelihood-only training.  
 
-(1) Simualtion: Achieve **Avg.Len of 4.33 on Calvin abc benchmarks** 
-
-(2) Real-world: solves **100+** tasks in real-world detexterous hand manipualtion tasks with **a single vpp policy**. 
-
-**VPP manily contains two part:**
-
-(1) Video prediction model training: Finetuning a general-purpose video foundation model into manipualtion-focused text-guided video prediction model. The main function entry is at `step1_prepare_latent_data.py` and `step1_train_svd.py`.
-
-(2) Action model training: Learning implicit inverse dynamics models conditioned on the representations inside video prediction models with diffusion transformer policy. The main function entry is at `step2_train_action_calvin.py` or `step2_train_action_xbot.py`.
+As a result, Dyn-VPP yields more accurate visual dynamics and improves downstream task execution. Experiments across diverse simulated and real-world manipulation settings show that Dyn-VPP achieves improved dynamics consistency and consistently higher task success.
 
 ## Installation 🛠️
 ```bash
