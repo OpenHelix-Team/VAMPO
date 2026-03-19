@@ -50,11 +50,10 @@ pip install -r requirements.txt
 | [dyn-vpp_policy](https://huggingface.co/williammmgezju/Dyn-VPP_policy) |   Action model trained on annoted calvin abc dataset    |  ~1G  |
 
 
-## 📊 Reproducing the results in paper 
-### 📊 Rollout on calvin abc benchmark
+## 📊 📊 Evaluation on Calvin abc benchmark
 First, you need to follow instructions in the [officail calvin repo](https://github.com/mees/calvin) to install the calvin environments and download official calvin ABC-D dataset(about 500 G).
 
-Next, download the [svd-robot-calvin](https://huggingface.co/yjguo/svd-robot-calvin-ft/tree/main) video model and [dp-calvin](https://huggingface.co/yjguo/dp-calvin/tree/main) action model. Set the video_model_folder and action_model_folder to the folder where you save the model.
+Next, download the [dyn-vpp_svd](https://huggingface.co/williammmgezju/Dyn-VPP_SVD) video model and [dyn-vpp_policy](https://huggingface.co/williammmgezju/Dyn-VPP_policy) action model. Set the video_model_folder and action_model_folder to the folder  where you save the model in the script.
 
 ```bash
 python policy_evaluation/calvin_evaluate.py --video_model_path ${path to svd-robot-calvin} --action_model_folder ${path to dp-calvin} --clip_model_path ${path to clip} --calvin_abc_dir ${path to calvin dataset} 
