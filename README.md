@@ -47,7 +47,7 @@ pip install -r requirements.txt
 |---------------|------------------|---------|
 | [Dyn-vpp_svd](https://huggingface.co/williammmgezju/Dyn-VPP_SVD)  | SVD video model trained by our method        | ~8G    |
 | [Dyn-vpp_policy](https://huggingface.co/williammmgezju/Dyn-VPP_policy) |   Action model trained on annoted calvin abc dataset    |  ~1G  |
-| [clip-vit-base-patch32](https://huggingface.co/openai/clip-vit-base-patch32)  | CLIP text encoder, freezed during training        |  ~600M   |
+| [clip-vit-base-patch32](https://huggingface.co/openai/clip-vit-base-patch32)  | CLIP text encoder       |  ~600M   |
 
 
 ## 📊 Evaluation on Calvin abc benchmark
