@@ -1,6 +1,6 @@
 <div align="center">
 
-# Dyn-VPP: Video Prediction Policy with Dynamic Optimization  
+# VAMPO: Policy Optimization for Improving Visual Dynamics in Video Action Models
 
 <a href='https://arxiv.org/abs/xxxx'><img src='https://img.shields.io/badge/ArXiv-XXXX-red'></a> 
 <a href='https://dyn-vpp.github.io/Dyn-VPP'><img src='https://img.shields.io/badge/Project-Page-Blue'></a> 
@@ -11,9 +11,21 @@
 
 ## 🚀 Overview
 
-Video action models are a promising foundation for Vision–Language–Action (VLA) because they can learn rich visual dynamics directly from video. However, likelihood-oriented training of diffusion predictors emphasizes globally plausible futures and does not guarantee precision-critical visual dynamics needed for manipulation, so small prediction errors can be amplified by downstream policies.  
-
-We propose **Dyn-VPP**, a post-training framework that casts multi-step denoising as policy optimization and aligns predicted future latents with expert visual dynamics via a verifiable terminal reward, without modifying any architecture. This enables explicit optimization of dynamics signals that are not captured by likelihood-only training. As a result, Dyn-VPP yields more accurate visual dynamics and improves downstream task execution. Experiments across diverse simulated and real-world manipulation settings show that Dyn-VPP achieves improved dynamics consistency and consistently higher task success.
+Video action models are an appealing foundation for Vision–Language–Action systems because they
+can learn visual dynamics from large-scale video data and transfer this knowledge to downstream robot
+control. Yet current diffusion-based video predictors are trained with likelihood-surrogate objectives,
+which encourage globally plausible predictions without explicitly optimizing the precision-critical
+visual dynamics needed for manipulation. This objective mismatch often leads to subtle errors in
+object pose, spatial relations, and contact timing that can be amplified by downstream policies. We
+propose VAMPO, a post-training framework that directly improves visual dynamics in video action
+models through policy optimization. Our key idea is to formulate multi-step denoising as a sequential
+decision process and optimize the denoising policy with rewards defined over expert visual dynamics in
+latent space. To make this optimization practical, we introduce an Euler Hybrid sampler that injects
+stochasticity only at the first denoising step, enabling tractable low-variance policy-gradient estimation
+while preserving the coherence of the remaining denoising trajectory. We further combine this design
+with GRPO and a verifiable non-adversarial reward based on L1 distance and cosine similarity. Across
+diverse simulated and real-world manipulation tasks, VAMPO improves task-relevant visual dynamics,
+leading to better downstream action generation and stronger generalization.
 
 <p>
     <img src="dyn_vpp_teaser.png" alt="method" width="100%" />
