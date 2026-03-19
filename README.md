@@ -3,7 +3,7 @@
 # 👉 Dyn-VPP: Video Prediction Policy with Dynamic Optimization  
 
 <a href='https://arxiv.org/abs/xxxx'><img src='https://img.shields.io/badge/ArXiv-XXXX-red'></a> 
-<a href='[https://your-project-page](https://dyn-vpp.github.io/Dyn-VPP/)'><img src='https://img.shields.io/badge/Project-Page-Blue'></a> 
+<a href='https://dyn-vpp.github.io/Dyn-VPP'><img src='https://img.shields.io/badge/Project-Page-Blue'></a> 
 
 </div>
 
