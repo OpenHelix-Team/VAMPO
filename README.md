@@ -24,22 +24,18 @@ As a result, Dyn-VPP yields more accurate visual dynamics and improves downstrea
 
 ## Installation 🛠️
 ```bash
-conda create -n vpp python==3.10
+conda create -n vpp python==3.11
 conda activate vpp
 
 # Install calvin as described in (https://github.com/mees/calvin). 
-# Maybe you will occur some render issues and you can refer to calvin repo to solve them.
-# You can skip calvin if you do not want to perform experiments on calvin
 git clone --recurse-submodules https://github.com/mees/calvin.git
 $ export CALVIN_ROOT=$(pwd)/calvin
 cd $CALVIN_ROOT
 sh install.sh
 
-# Then install vpp requirements
+# Install dyn-vpp requirements
 cd ..
 pip install -r requirements.txt
-
-# tips: calvin requires torch==1.13, but it also works with torch> 2.0, just ignore the warning
 ```
 
 
