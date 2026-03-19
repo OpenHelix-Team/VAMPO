@@ -125,15 +125,7 @@ The proccess is similar to train VPP on calvin benchamrks. Additionally, we prov
 
 ## Acknowledgement
 
-Video prediction policy is developed from the opensourced video foundation model [Stable-Video-Diffusion](https://github.com/Stability-AI/generative-models) and diffusion transformer policy [MDT](https://github.com/intuitive-robots/mdt_policy). We thank the authors for their efforts!
+Dyn-VPP is developed from [Video prediction policy](https://github.com/roboterax/video-prediction-policy). We thank the authors for their efforts!
 
 
-## Bibtex 
-If you find our work helpful, please leave us a star and cite our paper. Thank you!
-```
-@article{hu2024video,
-  title={Video Prediction Policy: A Generalist Robot Policy with Predictive Visual Representations},
-  author={Hu, Yucheng and Guo, Yanjiang and Wang, Pengchao and Chen, Xiaoyu and Wang, Yen-Jen and Zhang, Jianke and Sreenath, Koushil and Lu, Chaochao and Chen, Jianyu},
-  journal={arXiv preprint arXiv:2412.14803},
-  year={2024}
-}
+
