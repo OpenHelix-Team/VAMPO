@@ -2,6 +2,35 @@
 
 # Dyn-VPP: Video Prediction Policy with Dynamic Optimization  
 
+**Equal Contributions**: †  
+**Project Lead**: ‡  
+**Corresponding Authors**: *
+
+---
+
+- **Zirui Ge** † — Zhejiang University  
+- **Pengxiang Ding** †‡ — Westlake University  
+- **Yemin Wang** † — Xiamen University  
+- **Baohua Yin** — University of Sussex  
+- **Qishen Wang** — Tianjin University  
+- **Zhiyong Xie** — Wuhan University  
+- **Jinbo Wang** — South China University of Technology  
+- **Hengtao Li** — Hebei University of Technology  
+- **Runze Suo** — Fudan University  
+- **Wenxuan Song** — Nanjing University  
+- **Han Zhao** — Westlake University  
+- **Shangke Lyu** — Nanjing University  
+- **Haoang Li** — HKUST (GZ)  
+- **Ran Cheng** ‡ — OpenHelix Robotics  
+- **Cheng Chi** — Beijing Academy of Artificial Intelligence  
+- **Huibin Ge** — Zhejiang University  
+- **Yaozhi Luo*** — Zhejiang University  
+- **Donglin Wang*** — Westlake University
+
+---
+
+**Legend**:  
+† Equal Contributions | ‡ Project Lead | * Corresponding Authors
 <a href='https://arxiv.org/abs/xxxx'><img src='https://img.shields.io/badge/ArXiv-XXXX-red'></a> 
 <a href='https://dyn-vpp.github.io/Dyn-VPP'><img src='https://img.shields.io/badge/Project-Page-Blue'></a> 
 
