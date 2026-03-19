@@ -27,8 +27,8 @@ As a result, Dyn-VPP yields more accurate visual dynamics and improves downstrea
 
 ## 🛠️ Installation 
 ```bash
-conda create -n vpp python==3.11
-conda activate vpp
+conda create -n dyn-vpp python==3.11
+conda activate dyn-vpp
 
 # Install calvin as described in (https://github.com/mees/calvin). 
 git clone --recurse-submodules https://github.com/mees/calvin.git
