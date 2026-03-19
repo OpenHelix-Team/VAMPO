@@ -46,17 +46,17 @@ pip install -r requirements.txt
 | Ckpt name     | Training type | Size |
 |---------------|------------------|---------|
 | [clip-vit-base-patch32](https://huggingface.co/openai/clip-vit-base-patch32)  | CLIP text encoder, freezed during training        |  ~600M   |
-| [dyn-vpp_svd](https://huggingface.co/williammmgezju/Dyn-VPP_SVD)  | SVD video model trained by our method        | ~8G    |
-| [dyn-vpp_policy](https://huggingface.co/williammmgezju/Dyn-VPP_policy) |   Action model trained on annoted calvin abc dataset    |  ~1G  |
+| [Dyn-vpp_svd](https://huggingface.co/williammmgezju/Dyn-VPP_SVD)  | SVD video model trained by our method        | ~8G    |
+| [Dyn-vpp_policy](https://huggingface.co/williammmgezju/Dyn-VPP_policy) |   Action model trained on annoted calvin abc dataset    |  ~1G  |
 
 
-## 📊 📊 Evaluation on Calvin abc benchmark
+## 📊 Evaluation on Calvin abc benchmark
 First, you need to follow instructions in the [officail calvin repo](https://github.com/mees/calvin) to install the calvin environments and download official calvin ABC-D dataset(about 500 G).
 
-Next, download the [dyn-vpp_svd](https://huggingface.co/williammmgezju/Dyn-VPP_SVD) video model and [dyn-vpp_policy](https://huggingface.co/williammmgezju/Dyn-VPP_policy) action model. Set the video_model_folder and action_model_folder to the folder  where you save the model in the script.
+Next, download the [Dyn-vpp_svd](https://huggingface.co/williammmgezju/Dyn-VPP_SVD) video model and [Dyn-vpp_policy](https://huggingface.co/williammmgezju/Dyn-VPP_policy) action model. Set the video_model_folder and action_model_folder to the folder  where you save the model in the script.
 
 ```bash
-python policy_evaluation/calvin_evaluate.py --video_model_path ${path to svd-robot-calvin} --action_model_folder ${path to dp-calvin} --clip_model_path ${path to clip} --calvin_abc_dir ${path to calvin dataset} 
+bash scripts/eval_calvin.sh
 ```
 
 ## Acknowledgement
