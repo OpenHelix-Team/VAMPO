@@ -2,7 +2,7 @@
 
 # VAMPO: Policy Optimization for Improving Visual Dynamics in Video Action Models
 
-<a href='https://arxiv.org/pdf/2603.19370'><img src='https://img.shields.io/badge/ArXiv-XXXX-red'></a> 
+<a href='https://arxiv.org/pdf/2603.19370'><img src='https://img.shields.io/badge/ArXiv-VAMPO-red'></a> 
 <a href='https://vampo-robot.github.io/VAMPO/'><img src='https://img.shields.io/badge/Project-Page-Blue'></a> 
 <a href='https://huggingface.co/williammmgezju'><img src='https://img.shields.io/badge/🤗-HuggingFace-yellow'></a>
 </div>
