@@ -37,7 +37,7 @@ leading to better downstream action generation and stronger generalization.
 
 ## 🛠️ Installation 
 ```bash
-conda create -n VAMPO python==3.11
+conda create -n VAMPO python==3.10
 conda activate VAMPO
 
 # Install calvin as described in (https://github.com/mees/calvin). 
