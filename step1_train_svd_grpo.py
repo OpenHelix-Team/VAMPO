@@ -743,9 +743,8 @@ def main(
             sde_start = 0
             sde_end = 1
             train_num_timesteps = sde_end - sde_start
-            # ---------- <<< 关键改动：确保 sampling 在 inference_mode + no_grad 下执行 >>> ----------
-            with torch.inference_mode():                       # 比 torch.no_grad 更激进，会避免创建梯度图和部分缓冲
-                with accelerator.autocast():                   # 你原来有 autocast，保留以节省显存/加速
+            with torch.inference_mode():                       
+                with accelerator.autocast():                   
                     pred_latents, latents_trajectory, log_probs_trajectory, sigma_ups_trajectory, added_time_ids_trajectory = \
                         SamplingStableVideoDiffusionPipeline.__call__(
                             pipeline,
@@ -951,15 +950,6 @@ def main(
                             clipped_loss = -advantages * clipped_ratio
                             
                             loss = torch.mean(torch.minimum(unclipped_loss, clipped_loss))
-                            
-                            # # 计算KL散度
-                            # kl_divergence = torch.mean(log_prob - batch_log_probs)
-
-                            # # 计算KL惩罚项
-                            # kl_penalty = args.kl_penalty_factor * kl_divergence
-
-                            # # 最终的损失函数
-                            # loss = loss - kl_penalty
 
                             approx_kl = 0.5 * torch.mean((log_prob - batch_log_probs) ** 2)
                             clipfrac = torch.mean((torch.abs(ratio - 1.0) > clip_range).float())
