@@ -76,4 +76,18 @@ bash scripts/eval_calvin.sh
 Dyn-VPP is developed from [Video prediction policy](https://github.com/roboterax/video-prediction-policy). We thank the authors for their efforts!
 
 
+## Citation
+
+If you find this project useful in your research, please cite:
+
+```bibtex
+@article{ge2026vampo,
+  title={VAMPO: Policy Optimization for Improving Visual Dynamics in Video Action Models},
+  author={Ge, Zirui and Ding, Pengxiang and Yin, Baohua and Wang, Qishen and Xie, Zhiyong and Wang, Yemin and Wang, Jinbo and Li, Hengtao and Suo, Runze and Song, Wenxuan and Zhao, Han and Lyu, Shangke and Fan, Zhaoxin and Li, Haoang and Cheng, Ran and Chi, Cheng and Ge, Huibin and Luo, Yaozhi and Wang, Donglin},
+  journal={arXiv preprint arXiv:2603.19370},
+  year={2026}
+}
+
+
+
 
