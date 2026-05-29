@@ -87,7 +87,3 @@ If you find this project useful in your research, please cite:
   journal={arXiv preprint arXiv:2603.19370},
   year={2026}
 }
-
-
-
-
