@@ -68,7 +68,7 @@ class Diffusion_feature_extractor(nn.Module):
             image_latents = self.pipeline._encode_vae_image(pixel_values, device, num_videos_per_prompt, False)
         image_latents = image_latents.to(image_embeddings.dtype)
         
-        breakpoint()
+        
 
         # breakpoint()
         #print('dtype:', image_latents.dtype)
