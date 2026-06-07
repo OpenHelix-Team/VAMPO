@@ -104,12 +104,14 @@ Set the argument `video_model_path` to the video model you finetuned, the argume
 ```bash
 accelerate launch step2_train_action_calvin.py --root_data_dir ${path to Calvin dataset} --video_model_path ${path to video model} --text_encoder_path ${path to clip}
 
-## Acknowledgement
+
+### Acknowledgement
 
 VAMPO is developed from [Video prediction policy](https://github.com/roboterax/video-prediction-policy). We thank the authors for their efforts!
 
 
-## Citation
+
+### Citation
 
 If you find this project useful in your research, please cite:
 
