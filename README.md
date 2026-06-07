@@ -103,7 +103,7 @@ Set the argument `video_model_path` to the video model you finetuned, the argume
 
 ```bash
 accelerate launch step2_train_action_calvin.py --root_data_dir ${path to Calvin dataset} --video_model_path ${path to video model} --text_encoder_path ${path to clip}
-
+```
 
 ### Acknowledgement
 
